@@ -1,6 +1,6 @@
 from turtle import Turtle
 
-STARTING_POSITIONS = [0, -20, 20]
+STARTING_POSITIONS = [(0,0), (-20,0), (20,0)]
 MOVE_DISTANCE = 20
 UP = 90
 DOWN = 270
@@ -15,18 +15,24 @@ class Snake:
 
     def create_snake(self):
         for position in STARTING_POSITIONS:
-            square = Turtle()
-            square.shape("square")
-            square.color("white")
-            square.penup()
-            square.teleport(x=position)
-            self.snake_body.append(square)
+            self.adding_squares(position)
 
     def move(self):
         for square in range(len(self.snake_body) - 1, 0, -1):
             position = (self.snake_body[square - 1].xcor(),self.snake_body[square - 1].ycor())
             self.snake_body[square].goto(position)
         self.head.fd(MOVE_DISTANCE)
+
+    def adding_squares(self,position):
+        square = Turtle()
+        square.shape("square")
+        square.color("white")
+        square.penup()
+        square.teleport(x=position[0],y=position[1])
+        self.snake_body.append(square)
+
+    def food_found(self):
+        self.adding_squares(self.snake_body[-1].position())
 
     def up(self):
         if self.head.heading() != DOWN:
@@ -40,3 +46,4 @@ class Snake:
     def left(self):
         if self.head.heading() != RIGHT:
             self.head.setheading(LEFT)
+
