@@ -32,22 +32,25 @@ while game_on:
     #Detecting collision with food
     if mamba.head.distance(food) < 15:
         print("Hummy!")
-        food.refresh()
+        food.refresh(mamba)
         mamba.food_found()
         scoreboard.increase_score()
 
     #Detecting collision with the wall
     if mamba.head.xcor() > 280 or mamba.head.xcor() < -280 or mamba.head.ycor() > 280 or  mamba.head.ycor() < -280:
-        game_on = False
-        scoreboard.game_over()
+        #set a new high score if in case
+        scoreboard.reset_scoreboard()
+        mamba.reset_snake()
+        #game_on = False
+        #scoreboard.game_over()
 
     #Detecting collision with the tail
     for square in mamba.snake_body:
         if square == mamba.head:
             pass
         elif mamba.head.distance(square) < 10:
-            game_on = False
-            scoreboard.game_over()
+            scoreboard.reset_scoreboard()
+            mamba.reset_snake()
 
 
 

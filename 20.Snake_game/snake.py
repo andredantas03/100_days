@@ -46,4 +46,9 @@ class Snake:
     def left(self):
         if self.head.heading() != RIGHT:
             self.head.setheading(LEFT)
-
+    def reset_snake(self):
+        for square in self.snake_body:
+            square.goto(1000,1000)
+        self.snake_body.clear()
+        self.create_snake()
+        self.head = self.snake_body[0]
