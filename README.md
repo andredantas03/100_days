@@ -3,3 +3,8 @@
 
 Project's design helpers:
 colorhunt.co
+
+Projects that will be continued:
+Pomodoro
+Mypasswords
+SnakeGame
