@@ -1,5 +1,4 @@
 from tkinter import *
-
 from mypassword import Mypassword
 
 myroot = Tk()
