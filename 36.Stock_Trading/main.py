@@ -1,1 +1,2 @@
+import requests
 api_key='26faf5b9f8b64d03a251535eedf592d9'
