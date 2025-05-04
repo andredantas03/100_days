@@ -15,7 +15,7 @@ GENDER = 'male'
 WEIGHT_KG = 92.3
 HEIGHT_CM = 178
 AGE = 34
-sheet_endpoint = os.environ["ENV_SHEETY_ENDPOINT"]
+sheet_endpoint = os.environ["ENV_SHEETY_MYWORKOUTS"]
 GOOGLE_SHEET_NAME = "workouts"
 
 headers = {
