@@ -8,3 +8,4 @@ Projects that will be continued:
 Pomodoro
 Mypasswords
 SnakeGame
+
