@@ -1,3 +1,5 @@
+**/*.cache
+**/token.txt
 .env
 40.Flight_Club\.venv
 ideias.txt
